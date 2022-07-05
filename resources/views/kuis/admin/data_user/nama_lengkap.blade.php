@@ -1,0 +1,1 @@
+<h2>{{ Auth()->user()->nama_lengkap }}</h2>
