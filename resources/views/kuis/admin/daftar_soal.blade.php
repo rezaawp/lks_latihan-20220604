@@ -33,7 +33,7 @@
 						<button type="submit" class="btn btn-primary">Set</button>
 						</form>
 					</td>
-					<td><a href="" class="btn btn-success">Lihat Soal</a></td>
+					<td><a href="{{ route('preview_soal', ['token' => $item->token, 'guru_id' => auth()->user()->id]) }}" class="btn btn-success">Lihat Soal</a></td>
 					<td>
 						<a id="status_online" href="{{ route('guru.listSoal.status', ['id' => $item->id, 'bool' => 1]) }}" style="color: black; display: none;">Online</a>
 

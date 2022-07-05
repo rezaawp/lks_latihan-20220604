@@ -96,6 +96,7 @@ Route::controller(AdminController::class)->group(function () {
 					Route::delete('{id}/delete', 'destroy')->name('guru.mapel.destroy');
 					Route::get('{id}/soal/{mapel}/mapel', 'soal')->name('guru.mapel.soal');
 					Route::post('{token}/set-waktu', 'setWaktu')->name('guru.mapel.setWaktu');
+					Route::get('{token}/{guru_id}/preview-and-get', 'previewSoal')->name('preview_soal');
 				});
 			});
 
@@ -123,7 +124,7 @@ Route::controller(AdminController::class)->group(function () {
 Route::controller(KuisController::class)->group(function () {
 	Route::prefix('kuis')->group(function () {
 		Route::get('/task/{token}', 'kerjakanSoal')->name('kerjakanSoal');
-		Route::get('home', 'index')->name('kuis.home');
+		Route::get('/home', 'index')->name('kuis.home');
 		Route::get('buat-soal', 'addCardSoal')->name('kuis.buat-soal');
 		Route::post('buat-soal/do', 'doSimpanSoal')->name('kuis.doBuatSoal');
 		Route::post('buat-soal', 'countSoal')->name('kuis.CountSoal');
